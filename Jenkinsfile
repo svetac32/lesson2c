@@ -1,20 +1,20 @@
 pipeline {
 	environment {
-	imagename = "sv32/jenkins"
+	imagename = "svetac32/lesson2"
 	registryCredential = 'dockerhub_id'
 	dockerIamge = ''
 	}
 	agent any
 	stages {
-#           stage('Cloning git') {
-#                 steps {
-#                     echo 'Hi, itisgood. Starting to build the App.'
-#                 }
-#                 }
+           stage('Cloning git') {
+                 steps {
+                     echo 'Hi, TRying to clone in RAIF.'
+                 }
+                 }
             stage('Building Image') {
                steps {
                   script {
-				dockerImage = docker.build svetac32/lesson2
+				dockerImage = docker.build imagename
 			   }  
                     }
                  }
@@ -30,7 +30,7 @@ pipeline {
 		}
             stage('Deploying now') {
               steps {
-                sh "docker run --rm -d -p80:9090 mdsn/jenkins:latest"
+                sh "docker run --rm -d -p80:9090 svetac32/lesson2:latest"
                    }
                 }
 	}
