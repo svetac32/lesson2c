@@ -1,6 +1,6 @@
 pipeline {
 	environment {
-	imagename = "sv32/jenkins"
+	imagename = "svetac32/lesson2"
 	registryCredential = 'dockerhub_id'
 	dockerIamge = ''
 	}
