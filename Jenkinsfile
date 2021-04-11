@@ -11,14 +11,17 @@ pipeline {
                      echo 'Hi, TRying to clone in RAIF.'
                  }
                  }
-            stage('Building Image') {
+            stage('Building Image') 
+            {
                steps {
                   script {
-				docker.withRegistry('', registryCredential) {
-               dockerImage = docker.build imagename
-			   }  
+				      docker.withRegistry('', registryCredential) 
+                  {
+                      dockerImage = docker.build imagename
+			         }  
                     }
                  }
+            }        
             stage('Push Image') {
                steps {
                      script {
