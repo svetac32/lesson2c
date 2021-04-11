@@ -30,7 +30,7 @@ pipeline {
 		}
             stage('Deploying now') {
               steps {
-                sh "docker run --rm -d -p80:9090 svetac32/lesson2:latest"
+                sh "sudo docker run --rm -d -p80:9090 svetac32/lesson2:latest"
                    }
                 }
 	}
