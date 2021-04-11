@@ -1,0 +1,14 @@
+version: "2.1"
+services:
+    rubyitea:
+        image: lesson2
+        environment:
+            TEXT: "lesson2 Work"
+        ports :
+            - 80:9090 
+    rubyitea2:
+        image: lesson2
+        environment:
+            TEXT: "lesson3 Work"
+        ports :
+            - 81:9090 
